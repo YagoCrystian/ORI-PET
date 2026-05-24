@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orí Pet Hotel — Um lugar onde seu cão se sente em casa</title>
+  <meta name="description" content="Hotel e creche para cães com acompanhamento veterinário, espaço livre e muito carinho." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="icon" href="brand_assets/dogpaw.png"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: { 50: '#f4f7f4', 100: '#e6ede6', 200: '#cddccd', 300: '#a8c2a8', 400: '#7da17d', 500: '#5a845a', 600: '#46693d', 700: '#395434', 800: '#2e4229', 900: '#243522' },
+            warm: { 50: '#faf8f4', 100: '#f2ede3', 200: '#e5d9c4', 300: '#d3be9e', 400: '#c0a07a', 500: '#a8825a', 600: '#8e6a46', 700: '#735438', 800: '#5c432d', 900: '#4a3624' },
+            cream: { DEFAULT: '#faf7f2', dark: '#f0ebe1' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-body bg-cream text-warm-900 overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-navbar">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="logo-mark">
+          <img
+            src="./brand_assets/ori-pet-hotel-logo.png"
+            alt="Logo Orí Pet Hotel"
+            class="logo-image"
+          >
+        </div>
+        <div>
+          <span class="font-display text-xl font-semibold tracking-tight text-sage-700">Orí</span>
+          <span class="font-body text-xs text-warm-500 block leading-none tracking-widest uppercase">Pet Hotel</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#experiencia" class="nav-link">Experiência</a>
+        <a href="#avaliacoes" class="nav-link">Avaliações</a>
+        <a href="#galeria" class="nav-link">Galeria</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o Orí Pet Hotel." 
+           target="_blank" rel="noopener"
+           class="btn-whatsapp hidden md:flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <button id="menu-toggle" class="md:hidden p-2 rounded-lg text-warm-700 hover:bg-warm-100 transition-colors" aria-label="Menu">
+          <svg id="menu-icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg id="menu-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu-closed md:hidden overflow-hidden">
+      <div class="px-5 pb-6 pt-2 flex flex-col gap-1 bg-cream/95 backdrop-blur-md border-t border-warm-200/50">
+        <a href="#diferenciais" class="mobile-nav-link" data-close-menu>Diferenciais</a>
+        <a href="#experiencia" class="mobile-nav-link" data-close-menu>Experiência</a>
+        <a href="#avaliacoes" class="mobile-nav-link" data-close-menu>Avaliações</a>
+        <a href="#galeria" class="mobile-nav-link" data-close-menu>Galeria</a>
+        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o Orí Pet Hotel." 
+           target="_blank" rel="noopener"
+           class="btn-whatsapp-mobile mt-2 flex items-center justify-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="hero-bg absolute inset-0 z-0">
+      <video 
+        autoplay muted loop playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+        poster="./brand_assets/leo-dog-poster.jpg">
+        <source src="./brand_assets/leo-dog.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay absolute inset-0"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-5 pt-28 pb-16 w-full">
+      <div class="max-w-xl">
+        <div class="reveal-item">
+          <span class="inline-flex items-center gap-2 text-sage-300 text-sm font-medium tracking-wider uppercase mb-6">
+            <span class="w-8 h-px bg-sage-400"></span>
+            Hotel & Creche para Cães
+          </span>
+        </div>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6 reveal-item reveal-delay-1">
+          Um lugar onde<br/>
+          <em class="italic text-warm-300">seu cão</em><br/>
+          se sente em casa.
+        </h1>
+        <p class="text-white/80 text-lg md:text-xl leading-relaxed mb-10 font-light max-w-md reveal-item reveal-delay-2">
+          Hotel e creche para cães com acompanhamento veterinário, espaço livre e muito carinho.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 reveal-item reveal-delay-3">
+          <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o Orí Pet Hotel."
+             target="_blank" rel="noopener"
+             class="btn-hero-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Reservar agora
+          </a>
+          <a href="https://instagram.com/ori_pet_hotel" target="_blank" rel="noopener"
+             class="btn-hero-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Ver no Instagram
+          </a>
+        </div>
+
+        <div class="flex items-center gap-5 mt-10 reveal-item reveal-delay-4">
+          <div class="flex -space-x-2">
+            <div class="avatar-bubble bg-warm-300"></div>
+            <div class="avatar-bubble bg-sage-400"></div>
+            <div class="avatar-bubble bg-warm-400"></div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span class="text-yellow-400 text-sm">★★★★★</span>
+              <span class="text-white font-semibold text-sm">5.0</span>
+            </div>
+            <p class="text-white/60 text-xs">+200 famílias felizes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="avaliacoes" class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14 reveal-item">
+        <div class="flex items-center justify-center gap-1.5 mb-3">
+          <span class="text-yellow-400 text-2xl">★★★★★</span>
+        </div>
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-warm-900 mb-3">
+          Nota <em class="italic text-sage-600">5.0</em> no Google
+        </h2>
+        <p class="text-warm-500 text-base max-w-md mx-auto">Quem deixa uma vez, confia sempre. Veja o que os tutores dizem.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="review-card reveal-item">
+          <div class="flex items-center gap-1 mb-3">
+            <span class="text-yellow-400 text-sm">★★★★★</span>
+          </div>
+          <p class="text-warm-700 text-sm leading-relaxed mb-4 font-light italic">
+            "Meu cachorro não queria ir embora. Primeira vez que vi ele não querer me seguir quando fui buscá-lo!"
+          </p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-sage-200 flex items-center justify-center text-sage-700 text-xs font-semibold">MA</div>
+            <div>
+              <p class="text-warm-800 text-sm font-medium">Maria A.</p>
+              <p class="text-warm-400 text-xs">Tutora do Bento</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-item reveal-delay-1">
+          <div class="flex items-center gap-1 mb-3">
+            <span class="text-yellow-400 text-sm">★★★★★</span>
+          </div>
+          <p class="text-warm-700 text-sm leading-relaxed mb-4 font-light italic">
+            "Segurança, conforto e muito amor. Viajo em paz sabendo que minha Luna está em ótimas mãos."
+          </p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-warm-200 flex items-center justify-center text-warm-700 text-xs font-semibold">RC</div>
+            <div>
+              <p class="text-warm-800 text-sm font-medium">Rafael C.</p>
+              <p class="text-warm-400 text-xs">Tutor da Luna</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-item reveal-delay-2">
+          <div class="flex items-center gap-1 mb-3">
+            <span class="text-yellow-400 text-sm">★★★★★</span>
+          </div>
+          <p class="text-warm-700 text-sm leading-relaxed mb-4 font-light italic">
+            "Os cães ficam livres, não em baias. Isso fez toda a diferença pra mim. Ambiente completamente diferente."
+          </p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-sage-100 flex items-center justify-center text-sage-700 text-xs font-semibold">CF</div>
+            <div>
+              <p class="text-warm-800 text-sm font-medium">Carolina F.</p>
+              <p class="text-warm-400 text-xs">Tutora do Thor</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card reveal-item reveal-delay-3">
+          <div class="flex items-center gap-1 mb-3">
+            <span class="text-yellow-400 text-sm">★★★★★</span>
+          </div>
+          <p class="text-warm-700 text-sm leading-relaxed mb-4 font-light italic">
+            "Um lugar onde os cachorros podem ser cachorros. Chegou suado, feliz e exausto de tanto brincar."
+          </p>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-warm-100 flex items-center justify-center text-warm-700 text-xs font-semibold">LP</div>
+            <div>
+              <p class="text-warm-800 text-sm font-medium">Lucas P.</p>
+              <p class="text-warm-400 text-xs">Tutor do Léo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="py-20 md:py-28 bg-cream">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="reveal-item">
+          <span class="tag-label">Por que o Orí?</span>
+          <h2 class="font-display text-4xl md:text-5xl font-semibold text-warm-900 mt-3 mb-5 leading-tight">
+            Mais que um hotel.<br/>
+            <em class="italic text-sage-600">Uma segunda família.</em>
+          </h2>
+          <p class="text-warm-500 text-base leading-relaxed max-w-md">
+            O Orí nasceu da crença de que todo cão merece liberdade, carinho e cuidado de verdade. Sem baias, sem isolamento — só alegria.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="diferencial-card reveal-item">
+            <div class="diferencial-icon bg-sage-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sage-600"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Veterinária Responsável</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Acompanhamento veterinário presente em tempo integral.</p>
+          </div>
+
+          <div class="diferencial-card reveal-item reveal-delay-1">
+            <div class="diferencial-icon bg-warm-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-warm-600"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Espaço Amplo</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Área verde generosa para explorar, correr e descansar.</p>
+          </div>
+
+          <div class="diferencial-card reveal-item reveal-delay-2">
+            <div class="diferencial-icon bg-sage-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sage-600"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Cães Livres</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Sem baias. Os pets convivem em grupo, com supervisão.</p>
+          </div>
+
+          <div class="diferencial-card reveal-item reveal-delay-3">
+            <div class="diferencial-icon bg-warm-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-warm-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Segurança Total</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Ambiente cercado, monitorado e com equipe dedicada.</p>
+          </div>
+
+          <div class="diferencial-card reveal-item reveal-delay-1">
+            <div class="diferencial-icon bg-sage-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sage-600"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Acompanhamento Próximo</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Fotos e vídeos enviados diariamente no WhatsApp.</p>
+          </div>
+
+          <div class="diferencial-card reveal-item reveal-delay-2">
+            <div class="diferencial-icon bg-warm-100">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-warm-600"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <h3 class="font-semibold text-warm-800 text-sm mb-1">Socialização Saudável</h3>
+            <p class="text-warm-500 text-xs leading-relaxed">Grupos compatíveis para uma convivência equilibrada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIÊNCIA DOS PETS -->
+  <section id="experiencia" class="py-20 md:py-28 bg-sage-700 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-16 reveal-item">
+        <span class="tag-label-light">Rotina no Orí</span>
+        <h2 class="font-display text-4xl md:text-5xl font-semibold text-white mt-3 mb-4 leading-tight">
+          Uma vida que todo<br/>
+          <em class="italic text-warm-300">cão merece</em>
+        </h2>
+        <p class="text-sage-200 text-base max-w-md mx-auto leading-relaxed">
+          Do amanhecer ao anoitecer, seus dias são cheios de movimento, afeto e descanso de qualidade.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="exp-card reveal-item">
+          <div class="exp-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warm-300"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-white font-medium mb-2">Manhãs ativas</h3>
+          <p class="text-sage-300 text-sm leading-relaxed">Caminhadas, brincadeiras ao ar livre e socialização no espaço verde para começar o dia com energia.</p>
+        </div>
+
+        <div class="exp-card reveal-item reveal-delay-1">
+          <div class="exp-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warm-300"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-white font-medium mb-2">Carinho humano</h3>
+          <p class="text-sage-300 text-sm leading-relaxed">Nossa equipe apaixonada por cães cuida com afeto individual, reconhecendo a personalidade de cada pet.</p>
+        </div>
+
+        <div class="exp-card reveal-item reveal-delay-2">
+          <div class="exp-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-warm-300"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+          </div>
+          <h3 class="font-display text-xl text-white font-medium mb-2">Noites tranquilas</h3>
+          <p class="text-sage-300 text-sm leading-relaxed">Espaço aconchegante para descanso profundo, com camas confortáveis e ambiente calmo e seguro.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 reveal-item reveal-delay-2">
+        <div class="stat-card">
+          <span class="stat-number">+200</span>
+          <span class="stat-label">famílias atendidas</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">5.0</span>
+          <span class="stat-label">nota no Google</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">24h</span>
+          <span class="stat-label">de cuidado</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">amor garantido</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GISELE — SEÇÃO EMOCIONAL -->
+  <section id="eles-em-casa" class="py-20 md:py-28 bg-cream overflow-hidden">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- Texto -->
+        <div class="order-2 lg:order-1 reveal-item">
+          <span class="tag-label">Vida no Orí</span>
+          <h2 class="font-display text-4xl md:text-5xl font-semibold text-warm-900 mt-4 mb-5 leading-tight">
+            Mais do que<br/>
+            <em class="italic text-sage-600">hospedagem.</em>
+          </h2>
+          <p class="text-warm-500 text-base md:text-lg leading-relaxed mb-10 max-w-md">
+            No Orí Pet Hotel, cada cachorro recebe atenção, carinho e liberdade para viver dias felizes e tranquilos.
+          </p>
+
+          <ul class="space-y-4">
+            <li class="gisele-highlight reveal-item reveal-delay-1">
+              <div class="gisele-highlight-icon bg-sage-100">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sage-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-warm-800 text-sm">Ambiente seguro</p>
+                <p class="text-warm-500 text-xs leading-relaxed mt-0.5">Espaço cercado, monitorado e pensado para o bem-estar dos pets.</p>
+              </div>
+            </li>
+            <li class="gisele-highlight reveal-item reveal-delay-2">
+              <div class="gisele-highlight-icon bg-warm-100">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-warm-600"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-warm-800 text-sm">Supervisão veterinária</p>
+                <p class="text-warm-500 text-xs leading-relaxed mt-0.5">Veterinária responsável presente para cuidar com excelência.</p>
+              </div>
+            </li>
+            <li class="gisele-highlight reveal-item reveal-delay-3">
+              <div class="gisele-highlight-icon bg-sage-100">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-sage-600"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+              <div>
+                <p class="font-semibold text-warm-800 text-sm">Espaço livre e verde</p>
+                <p class="text-warm-500 text-xs leading-relaxed mt-0.5">Área ampla ao ar livre para correr, brincar e explorar com liberdade.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Vídeo -->
+        <div class="order-1 lg:order-2 reveal-item reveal-delay-1">
+          <div class="gisele-video-wrapper">
+            <video
+              autoplay muted loop playsinline
+              class="gisele-video">
+              <source src="./brand_assets/gisele-dog.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+<!-- GALERIA -->
+<section id="galeria" class="py-20 md:py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-5">
+
+    <div class="text-center mb-12 reveal-item">
+      <span class="tag-label">Galeria</span>
+
+      <h2 class="font-display text-4xl md:text-5xl font-semibold text-warm-900 mt-3 mb-3">
+        A vida no <em class="italic text-sage-600">Orí</em>
+      </h2>
+
+      <p class="text-warm-500 text-sm">
+        <a
+          href="https://instagram.com/ori_pet_hotel"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-1.5 hover:text-sage-600 transition-colors"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+
+          @ori_pet_hotel
+        </a>
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- FOTO GRANDE -->
+      <div class="gallery-item gallery-item-large reveal-item">
+        <img
+          src="./brand_assets/dog1.png"
+          alt="Cachorro brincando no Orí Pet Hotel"
+          class="gallery-media"
+        />
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FOTO 2 -->
+      <div class="gallery-item reveal-item reveal-delay-1">
+        <img
+          src="./brand_assets/dog2.png"
+          alt="Pet descansando no Orí Pet Hotel"
+          class="gallery-media"
+        />
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FOTO 3 -->
+      <div class="gallery-item reveal-item reveal-delay-2">
+        <img
+          src="./brand_assets/dog3.jpeg"
+          alt="Cães socializando no Orí Pet Hotel"
+          class="gallery-media"
+        />
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FOTO 5 -->
+      <div class="gallery-item reveal-item reveal-delay-1">
+        <img
+          src="./brand_assets/dog4.jpeg"
+          alt="Momento feliz no Orí Pet Hotel"
+          class="gallery-media"
+        />
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FOTO 5 -->
+      <div class="gallery-item reveal-item reveal-delay-2">
+        <img
+          src="./brand_assets/dog5.jpeg"
+          alt="Área verde do Orí Pet Hotel"
+          class="gallery-media"
+        />
+
+        <div class="gallery-overlay"></div>
+
+        <div class="gallery-hover">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 reveal-item">
+      <a
+        href="https://instagram.com/ori_pet_hotel"
+        target="_blank"
+        rel="noopener"
+        class="btn-outline-sage inline-flex items-center gap-2"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+
+        Ver mais no Instagram
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CTA FINAL -->
+  <section class="py-24 md:py-32 bg-cream relative overflow-hidden">
+    <div class="cta-bg-decoration"></div>
+    <div class="max-w-3xl mx-auto px-5 text-center relative z-10">
+      <div class="reveal-item">
+        <div class="floating-paw mb-8">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" class="mx-auto text-sage-400">
+            <path d="M11 6.5C11 7.88 9.88 9 8.5 9S6 7.88 6 6.5 7.12 4 8.5 4 11 5.12 11 6.5z" fill="currentColor" opacity="0.6"/>
+            <path d="M18 6.5C18 7.88 16.88 9 15.5 9S13 7.88 13 6.5 14.12 4 15.5 4 18 5.12 18 6.5z" fill="currentColor" opacity="0.6"/>
+            <path d="M7 10.5C7 11.88 5.88 13 4.5 13S2 11.88 2 10.5 3.12 8 4.5 8 7 9.12 7 10.5z" fill="currentColor" opacity="0.4"/>
+            <path d="M22 10.5C22 11.88 20.88 13 19.5 13S17 11.88 17 10.5 18.12 8 19.5 8 22 9.12 22 10.5z" fill="currentColor" opacity="0.4"/>
+            <path d="M17.34 14.23c-.96-1.28-2.13-2.23-3.34-2.23h-4c-1.21 0-2.38.95-3.34 2.23C5.67 15.51 5 17.17 5 18.5 5 20.43 6.12 22 8 22c.88 0 1.63-.31 2.38-.62.75-.31 1.5-.63 2.38-.63s1.63.32 2.38.63c.75.31 1.5.62 2.38.62C19.88 22 21 20.43 21 18.5c0-1.33-.67-2.99-1.66-4.27z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-warm-900 mb-5 leading-tight">
+          Viaje tranquilo.<br/>
+          <em class="italic text-sage-600">Seu melhor amigo</em><br/>
+          estará em ótimas mãos.
+        </h2>
+        <p class="text-warm-500 text-base md:text-lg leading-relaxed mb-10 max-w-md mx-auto">
+          Entre em contato agora e garanta a vaga do seu pet no Orí Pet Hotel.
+        </p>
+        <a href="https://wa.me/5511999999999?text=Olá! Gostaria de saber mais sobre o Orí Pet Hotel e fazer uma reserva."
+           target="_blank" rel="noopener"
+           class="btn-cta-final">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" class="py-20 md:py-28 bg-cream-dark">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+        <!-- Info -->
+        <div class="reveal-item">
+          <span class="tag-label">Onde estamos</span>
+          <h2 class="font-display text-4xl md:text-5xl font-semibold text-warm-900 mt-4 mb-4 leading-tight">
+            Visite o<br/>
+            <em class="italic text-sage-600">Orí Pet Hotel</em>
+          </h2>
+          <p class="text-warm-500 text-base leading-relaxed mb-8 max-w-sm">
+            Um espaço pensado para receber seu melhor amigo com todo o conforto e carinho que ele merece.
+          </p>
+
+          <ul class="space-y-5 mb-8">
+            <li class="flex items-start gap-4">
+              <div class="map-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="text-warm-800 font-medium text-sm mb-0.5">Endereço</p>
+                <p class="text-warm-500 text-sm leading-relaxed">R. F, 10 — Ulisses Guimarães<br/>Vila Velha – ES, 29127-995</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="map-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="text-warm-800 font-medium text-sm mb-0.5">Horários</p>
+                <p class="text-warm-500 text-sm leading-relaxed">Seg–Sex: 7h às 19h<br/>Sáb: 7h às 17h &nbsp;|&nbsp; Dom: 8h às 13h</p>
+                <p class="text-sage-600 text-xs mt-1 font-medium">Hospedagem disponível 24h</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="map-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <p class="text-warm-800 font-medium text-sm mb-0.5">Telefone / WhatsApp</p>
+                <p class="text-warm-500 text-sm">(27) 99999-9999</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="https://wa.me/5527999999999?text=Olá! Gostaria de saber mais sobre o Orí Pet Hotel."
+             target="_blank" rel="noopener"
+             class="btn-whatsapp inline-flex">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+
+        <!-- Mapa -->
+        <div class="reveal-item reveal-delay-1">
+          <div class="map-embed-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.0!2d-40.2950!3d-20.3300!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sR.+F%2C+10+-+Ulisses+Guimar%C3%A3es%2C+Vila+Velha+-+ES%2C+29127-995!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização do Orí Pet Hotel">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-warm-900 text-warm-200 py-14">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <div class="flex items-center gap-2.5 mb-4">
+            <div class="logo-mark-footer">
+              <img
+                src="./brand_assets/ori-pet-hotel-logo.png"
+                alt="Logo Orí Pet Hotel"
+                class="logo-image"
+              >
+            </div>
+            <div>
+              <span class="font-display text-lg font-semibold text-white">Orí Pet Hotel</span>
+            </div>
+          </div>
+          <p class="text-warm-400 text-sm leading-relaxed max-w-xs">
+            Hotel e creche para cães com acompanhamento veterinário, espaço livre e muito carinho.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4 tracking-wide uppercase">Contato</h4>
+          <ul class="space-y-3">
+            <li>
+              <a href="https://wa.me/5511999999999" target="_blank" rel="noopener"
+                 class="footer-link flex items-center gap-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="shrink-0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                (11) 99999-9999
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/ori_pet_hotel" target="_blank" rel="noopener"
+                 class="footer-link flex items-center gap-2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                @ori_pet_hotel
+              </a>
+            </li>
+            <li>
+              <span class="footer-link flex items-center gap-2.5 cursor-default">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Vila Velha, ES
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-semibold text-sm mb-4 tracking-wide uppercase">Horários</h4>
+          <ul class="space-y-2 text-warm-400 text-sm">
+            <li class="flex justify-between">
+              <span>Segunda a Sexta</span>
+              <span class="text-warm-300">7h – 19h</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sábado</span>
+              <span class="text-warm-300">7h – 17h</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Domingo</span>
+              <span class="text-warm-300">8h – 13h</span>
+            </li>
+          </ul>
+          <div class="mt-4 pt-4 border-t border-warm-800">
+            <p class="text-warm-500 text-xs">Hospedagem 24h disponível</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-warm-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-warm-600 text-xs">© 2026 Orí Pet Hotel. Todos os direitos reservados.</p>
+        <p class="text-warm-600 text-xs">Feito com ❤️ para quem ama seus pets</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
